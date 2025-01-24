@@ -1,0 +1,120 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,.75);
+    overflow: hidden;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    display: none;;
+}
+
+#loader::after {
+    content: "";
+    height: 100px;
+    width: 100px;
+    display: block;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-left: 10px solid white;
+    animation: spin .75s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+h3 {
+    font-style: italic;
+}
+
+button {
+    padding: .5rem 1rem;
+    background: linear-gradient(45deg, #316599, #5d754c);
+    color: white;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+#results {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#results .grid {
+    width: 80%;
+    height: 80%;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    row-gap: 5rem;
+}
+
+#results .grid .item {
+    width: 100%;
+    height: 200px;
+    box-shadow: 10px 10px 10px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.item img {
+    max-width: 100%;
+}
+
+.item span {
+    padding: 1rem 0;
+}
